@@ -13,17 +13,17 @@ function List(props) {
                 <ListGroup>
                     <ListGroupItem className="single" >
                         <img id="image"
-                            src="https://oie.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg"
+                            src={props.image}
                             alt="" />
                         <div id="button">
-                            <Button color="success">View</Button>{' '}
+                            <a href={props.link}><Button color="success">View</Button>{' '}</a>
                             <Button color="primary">Save</Button>{' '}
                         </div>
-                        <ListGroupItemHeading>Book Title</ListGroupItemHeading>
-                        <ListGroupItemText>Written By Author</ListGroupItemText>
+                        <ListGroupItemHeading>{props.title}</ListGroupItemHeading>
+                        <ListGroupItemText>Written By {props.author}</ListGroupItemText>
                         <ListGroupItemText>
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-          </ListGroupItemText>
+                            {props.description}
+                        </ListGroupItemText>
                     </ListGroupItem>
                 </ListGroup>
             </div>

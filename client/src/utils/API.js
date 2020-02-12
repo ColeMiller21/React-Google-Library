@@ -1,6 +1,7 @@
 import axios from "axios";
+require('dotenv').config();
 
-// const APIKEY = "AIzaSyAsYzC2Xx3xhYWRcHjSjNI7ml56rH1T5uA";
+
 
 export default {
     search: function (query) {

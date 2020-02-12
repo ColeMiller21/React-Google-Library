@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { InputGroup, Input, InputGroupAddon, Button, Container, Row } from 'reactstrap';
 import Banner from "../Banner/Banner"
 import List from "../List/List";
-import "./style.css"
+import "./style.css";
+
 
 class Search extends Component {
 
@@ -16,6 +17,17 @@ class Search extends Component {
         this.setState({
             [name]: value
         })
+    }
+
+    searchBook = () => {
+        fetch("/api/search/" + this.state.search).then(res => res.json())
+            .then(data => this.setState({ books: data.items }))
+
+        this.setState({ search: "" });
+    }
+
+    createBook = () => {
+
     }
 
     render() {
@@ -35,12 +47,22 @@ class Search extends Component {
                                 onChange={this.handleInputChange}
                                 placeholder="Type in Book Here" />
                             <InputGroupAddon addonType="prepend">
-                                <Button color="primary">Search</Button>
+                                <Button
+                                    onClick={this.searchBook}
+                                    color="primary">Search</Button>
                             </InputGroupAddon>
                         </InputGroup>
                     </div>
-                    <List />
-                    <List />
+                    {this.state.books.map((book, i) =>
+                        <List
+                            title={book.volumeInfo.title}
+                            image={book.volumeInfo.imageLinks.smallThumbnail}
+                            link={book.volumeInfo.infoLink}
+                            description={book.volumeInfo.description}
+                            author={book.volumeInfo.authors}
+                            key={"list_" + i} />
+                    )}
+
                 </Container>
             </div>
 
