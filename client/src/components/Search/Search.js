@@ -30,7 +30,6 @@ class Search extends Component {
 
 
     saveBook = (bookObj) => {
-        // console.log(bookObj)
         fetch("/api/saved", {
             method: "POST",
             headers: {
