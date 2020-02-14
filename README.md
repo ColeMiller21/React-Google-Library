@@ -1,7 +1,7 @@
 # React Google Library
 
 <div align="left">
-    <img src="https://github.com/ColeMiller21/React-Click-Game/blob/master/src/components/images/ReadMeImage.png?raw=true" width="650px"</img> 
+    <img src="https://github.com/ColeMiller21/React-Google-Library/blob/master/READMe-image.png?raw=true" width="650px"</img> 
 </div>
 
 
@@ -34,5 +34,5 @@ By clicking on the link below you are brought to the search page. Input a book o
 
 ## Link To React Google Library!
 
-Project Link : [Deployed on Heroku](https://colemiller21.github.io/React-Click-Game/)
+Project Link : [Deployed on Heroku](https://gentle-meadow-77780.herokuapp.com/)
 
