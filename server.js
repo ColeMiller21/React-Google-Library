@@ -12,10 +12,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-// Define API routes here
 
-
-//need to change to actual db
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
 
 require("./routes/apiRoutes")(app);
