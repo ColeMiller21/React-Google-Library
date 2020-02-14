@@ -24,11 +24,6 @@ class App extends Component {
               <Route exact path="/saved" component={Saved} />
             </Row>
           </Router>
-
-          {/* <Row>
-            <Search />
-            <Saved />
-          </Row> */}
         </Container>
       </div>
 

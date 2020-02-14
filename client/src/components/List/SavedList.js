@@ -13,16 +13,16 @@ function SavedList(props) {
                 <ListGroup className="single">
                     <ListGroupItem >
                         <img id="image"
-                            src="https://oie.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg"
-                            alt="" />
+                            src={props.image}
+                            alt={props.title} />
                         <div id="button">
-                            <Button color="danger">Delete</Button>{' '}
+                            <Button onClick={props.deleteBook} color="danger">Delete</Button>{' '}
                         </div>
-                        <ListGroupItemHeading>Book Title</ListGroupItemHeading>
-                        <ListGroupItemText>Written By Author</ListGroupItemText>
+                        <ListGroupItemHeading>{props.title}</ListGroupItemHeading>
+                        <ListGroupItemText>{props.author}</ListGroupItemText>
                         <ListGroupItemText>
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-          </ListGroupItemText>
+                            {props.description}
+                        </ListGroupItemText>
                     </ListGroupItem>
                 </ListGroup>
             </div>

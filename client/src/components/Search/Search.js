@@ -19,16 +19,32 @@ class Search extends Component {
         })
     }
 
-    searchBook = () => {
+    searchBook = (event) => {
+        event.preventDefault();
         fetch("/api/search/" + this.state.search).then(res => res.json())
             .then(data => this.setState({ books: data.items }))
 
         this.setState({ search: "" });
     }
 
-    createBook = () => {
 
+
+    saveBook = (bookObj) => {
+        // console.log(bookObj)
+        fetch("/api/saved", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(bookObj)
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
+
+
+
 
     render() {
         return (
@@ -60,7 +76,9 @@ class Search extends Component {
                             link={book.volumeInfo.infoLink}
                             description={book.volumeInfo.description}
                             author={book.volumeInfo.authors}
-                            key={"list_" + i} />
+                            key={"list_" + i}
+                            saveBook={this.saveBook}
+                        />
                     )}
 
                 </Container>

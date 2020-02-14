@@ -17,7 +17,12 @@ function List(props) {
                             alt="" />
                         <div id="button">
                             <a href={props.link}><Button color="success">View</Button>{' '}</a>
-                            <Button color="primary">Save</Button>{' '}
+                            <Button
+                                onClick={() => props.saveBook({
+                                    title: props.title, author: props.author, image: props.image,
+                                    description: props.description, link: props.link
+                                })}
+                                color="primary">Save</Button>{' '}
                         </div>
                         <ListGroupItemHeading>{props.title}</ListGroupItemHeading>
                         <ListGroupItemText>Written By {props.author}</ListGroupItemText>
