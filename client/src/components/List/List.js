@@ -14,7 +14,7 @@ function List(props) {
                     <ListGroupItem className="single" >
                         <img id="image"
                             src={props.image}
-                            alt="" />
+                            alt={props.title} />
                         <div id="button">
                             <a href={props.link}><Button color="success">View</Button>{' '}</a>
                             <Button
