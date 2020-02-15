@@ -9,7 +9,7 @@ module.exports = function (app) {
     app.get("/api/search/:search", function (req, res) {
         const { search } = req.params
         axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&download=epub&key=" + APIKEY)
-            .then(function (response) {
+            .then(response => {
                 return res.json({ items: response.data.items })
             }).catch(err => console.log(err))
     })
